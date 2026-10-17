@@ -4,7 +4,7 @@
 
 After setting up Key Vault and access controls, I needed a way to review secret access, apply security rules across the environment, and alert the team when a relevant failure occurred. This section covers the monitoring and governance controls configured for the Fabrikam lab, along with the evidence available for each one.
 
-## Step 1 — Send Key Vault logs to Log Analytics
+## Step 1 : Send Key Vault logs to Log Analytics
 
 I created the Log Analytics workspace `law-fab-sec-001` and configured the Key Vault diagnostic settings to send audit logs to it.
 
@@ -29,7 +29,7 @@ AzureDiagnostics
 
 This query shows the operation and result, but it does not include the caller identity. For an access investigation, the query should also return the caller information available in the workspace and be filtered to the relevant vault or operation. The exact field name depends on the diagnostic schema, so it should be checked against the columns available in the workspace.
 
-## Step 2 — Review security posture in Defender for Cloud
+## Step 2 : Review security posture in Defender for Cloud
 
 I reviewed the Defender for Cloud settings for Foundational Cloud Security Posture Management (CSPM) and the Key Vault protection plan.
 
@@ -43,14 +43,14 @@ I reviewed the Defender for Cloud settings for Foundational Cloud Security Postu
 
 Defender for Cloud provides a central place to review security recommendations and the subscription's security posture. Secure Score can help show where improvements are needed, but it does not mean that every risk has been fixed. The screenshots in this evidence set show the settings pages; they do not establish a Secure Score value or confirm the final status of the Key Vault protection plan. Those details need to be recorded from the subscription overview and plan status in the portal.
 
-## Step 3 — Configure Azure Policy guardrails
+## Step 3 : Configure Azure Policy guardrails
 
 I configured policy guardrails for the following areas:
 
-- `FAB-SEC-001-Deny-Public-KeyVault` — intended to deny Key Vault configurations that allow public network access.
-- `FAB-deny-storage-public-access` — intended to restrict public network access for storage accounts.
-- `FAB-SEC-001-Deny-Non-RBAC-KeyVault` — intended to require Azure RBAC for Key Vault authorization.
-- `FAB-SEC-001-Deny-Mandatory-Tags` — initiative for the required resource tags.
+- `FAB-SEC-001-Deny-Public-KeyVault` : intended to deny Key Vault configurations that allow public network access.
+- `FAB-deny-storage-public-access` : intended to restrict public network access for storage accounts.
+- `FAB-SEC-001-Deny-Non-RBAC-KeyVault` : intended to require Azure RBAC for Key Vault authorization.
+- `FAB-SEC-001-Deny-Mandatory-Tags` : initiative for the required resource tags.
 
 ![Key Vault RBAC policy assignment](../evidence/kv-rbac-policy-created.png)
 
@@ -84,13 +84,13 @@ I created the alert rule `alert-fab-kv-unauthorized-access` for failed Key Vault
 
 The screenshots document the alert configuration. They do not show that the rule fired or that an email was received. To verify the full alert path, a controlled test needs to generate an event that matches the rule, followed by evidence of the fired alert and the notification received. The test should use a test identity and avoid real secrets or production accounts.
 
-## Step 5 — Regulatory compliance
+## Step 5 : Regulatory compliance
 
 The client brief calls for an ongoing compliance view. The current evidence does not show a specific Regulatory Compliance standard and its control results, so I cannot claim that a compliance review has been completed.
 
 To close this gap, capture the Regulatory Compliance page in Defender for Cloud, record the standard displayed in the portal, and document the relevant passed, failed and unassessed controls. The standard and results should come from the actual subscription view rather than being assumed.
 
-## Step 6 — Handover and next steps
+## Step 6 : Handover and next steps
 
 The controls provide a starting point for managing access to secrets, reviewing audit events and applying governance rules. They still need operational checks and clear ownership after handover.
 
