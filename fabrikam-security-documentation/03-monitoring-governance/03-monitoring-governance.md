@@ -27,7 +27,7 @@ AzureDiagnostics
 | project TimeGenerated, Resource, Category, OperationName, ResultType
 ```
 
-This query shows the operation and result, but it does not include the caller identity. For an access investigation, the query should also return the caller information available in the workspace and be filtered to the relevant vault or operation. The exact field name depends on the diagnostic schema, so it should be checked against the columns available in the workspace.
+This query shows the operation performed and its result, but I also need to know who performed it when investigating an access issue. I would update the query to include the caller information available in Log Analytics and filter the results to the relevant Key Vault or operation. Since the caller field can vary depending on the diagnostic table, I would first check the available columns in the workspace.
 
 ## Step 2 : Review security posture in Defender for Cloud
 
