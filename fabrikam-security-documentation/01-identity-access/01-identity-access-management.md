@@ -66,8 +66,8 @@ I used Microsoft Entra ID for people and groups, and a system-assigned managed i
 
 I created two assigned security groups:
 
-- `grp-fab-sec-admin` — **Fabrikam Key Vault Security Administrators**
-- `grp-fab-auditors` — **Fabrikam Key Vault Read-Only Auditors**
+- `grp-fab-sec-admin` : **Fabrikam Key Vault Security Administrators**
+- `grp-fab-auditors` : **Fabrikam Key Vault Read-Only Auditors**
 
 Using groups means I can manage access through group membership instead of assigning the same role to each person one by one. The role can stay on the group when its membership changes.
 
