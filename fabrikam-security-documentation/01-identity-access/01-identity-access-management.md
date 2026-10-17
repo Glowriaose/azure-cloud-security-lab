@@ -1,4 +1,4 @@
-# Fabrikam Financial Services — Project Brief and Identity & Access Management
+# Fabrikam Financial Services : Project Brief and Identity & Access Management
 
 ## Project brief
 
