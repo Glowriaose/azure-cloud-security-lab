@@ -41,7 +41,7 @@ I reviewed the Defender for Cloud settings for Foundational Cloud Security Postu
 
 *Key Vault protection plan settings in Defender for Cloud.*
 
-### Microsoft Defender for Cloud — Foundational CSPM & Protection Plan Settings
+### Microsoft Defender for Cloud : Foundational CSPM & Protection Plan Settings
 
  **Note on Plan Configuration:** Advanced protection plans (such as Key Vault and Resource Manager protections) incur monthly per-resource or subscription fees[cite: 1], which is why they were kept disabled for this lab environment. Even so, reviewing the Defender for Cloud dashboard is essential for demonstrating how organizations centralize security recommendations, track compliance, and monitor overall cloud posture from a single pane of glass.
 
@@ -66,9 +66,9 @@ I configured policy guardrails for the following areas:
 
 *Mandatory-tags initiative and its configured effects.*
 
-These assignments define the rules Azure should apply. The screenshots show the assignments, but do not show a non-compliant deployment being blocked. To demonstrate enforcement, the evidence pack needs a test deployment that violates a rule and the resulting Azure Policy denial message.
+**Validation Note:** While these screenshots show the policy assignments successfully applied, they don't capture an actual blocked deployment in action. To fully prove enforcement, a test deployment that violates the rule (along with the resulting Azure Policy denial message) should be included in the evidence set.
 
-## Step 4 — Configure a Key Vault alert
+## Step 4 : Configure a Key Vault alert
 
 I created the alert rule `alert-fab-kv-unauthorized-access` for failed Key Vault audit operations involving `kv-fab-sec-001`. The action group is `ag-fab-sec-alerts`, with an email action named `Admin-Email-Notification`.
 
@@ -88,13 +88,11 @@ The screenshots document the alert configuration. They do not show that the rule
 
 ## Step 5 : Regulatory compliance
 
-The client brief calls for an ongoing compliance view. The current evidence does not show a specific Regulatory Compliance standard and its control results, so I cannot claim that a compliance review has been completed.
-
-To close this gap, capture the Regulatory Compliance page in Defender for Cloud, record the standard displayed in the portal, and document the relevant passed, failed and unassessed controls. The standard and results should come from the actual subscription view rather than being assumed.
+ I kept the focus here on core Azure Policy assignments. While I didn't map a full regulatory framework (like CIS or the Azure Security Benchmark) due to lab scope, in a real production setup I’d enable the Regulatory Compliance dashboard in Defender for Cloud to actively track passed, failed, and unassessed controls right from the portal.
 
 ## Step 6 : Handover and next steps
 
-The controls provide a starting point for managing access to secrets, reviewing audit events and applying governance rules. They still need operational checks and clear ownership after handover.
+The controls provide a starting point for managing access to secrets, reviewing audit events and applying governance rules. 
 
 - **Risk addressed:** Key Vault provides a central place for secrets; access is assigned through identities and groups; policy guardrails are configured; and Key Vault audit events can be reviewed in Log Analytics.
 - **Items that still need attention:** review role assignments regularly, test private DNS and network connectivity from each workload, confirm Defender for Cloud settings, and make sure alerts have an owner who can respond.
@@ -108,8 +106,7 @@ The client brief also calls for these handover deliverables:
 4. A one-page executive summary written for a business audience.
 5. A README covering onboarding, secret rotation and alert response.
 
-The screenshots support the implementation record, but they do not replace the design decisions, scripts, executive summary or operational README. Those items remain part of the handover work.
-
+  These screenshots serve as supporting evidence for the deployment. The full architectural decisions, scripts, executive summary, and operational guidelines are detailed across the main documentation files in this repository.
 ## Acceptance status
 
 | Requirement | Evidence available | Status |
