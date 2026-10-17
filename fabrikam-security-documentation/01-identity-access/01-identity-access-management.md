@@ -48,9 +48,9 @@ The client wants to improve how it stores secrets, controls access, prevents uns
 
 I split the project into three parts so the setup and decisions are easier to follow:
 
-1. **Identity and access management** — the Entra groups, role assignments, and VM managed identity.
-2. **Azure resources, networking, and RBAC** — the resource group, Key Vault, VM, virtual network, subnets, private endpoint, and private DNS.
-3. **Monitoring, governance, and handover** — Azure Policy, Defender for Cloud, logs, alerts, compliance evidence, and outstanding work.
+1. **Identity and access management** : the Entra groups, role assignments, and VM managed identity.
+2. **Azure resources, networking, and RBAC** : the resource group, Key Vault, VM, virtual network, subnets, private endpoint, and private DNS.
+3. **Monitoring, governance, and handover** : Azure Policy, Defender for Cloud, logs, alerts, compliance evidence, and outstanding work.
 
 ---
 
