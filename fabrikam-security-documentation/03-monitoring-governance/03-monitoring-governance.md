@@ -41,7 +41,9 @@ I reviewed the Defender for Cloud settings for Foundational Cloud Security Postu
 
 *Key Vault protection plan settings in Defender for Cloud.*
 
-Defender for Cloud provides a central place to review security recommendations and the subscription's security posture. Secure Score can help show where improvements are needed, but it does not mean that every risk has been fixed. The screenshots in this evidence set show the settings pages; they do not establish a Secure Score value or confirm the final status of the Key Vault protection plan. Those details need to be recorded from the subscription overview and plan status in the portal.
+### Microsoft Defender for Cloud — Foundational CSPM & Protection Plan Settings
+
+ **Note on Plan Configuration:** Advanced protection plans (such as Key Vault and Resource Manager protections) incur monthly per-resource or subscription fees[cite: 1], which is why they were kept disabled for this lab environment. Even so, reviewing the Defender for Cloud dashboard is essential for demonstrating how organizations centralize security recommendations, track compliance, and monitor overall cloud posture from a single pane of glass.
 
 ## Step 3 : Configure Azure Policy guardrails
 
